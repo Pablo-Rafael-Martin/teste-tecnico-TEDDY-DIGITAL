@@ -1,0 +1,215 @@
+/* ===== RESET CSS PESADO ===== */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-work-sans), sans-serif;
+}
+
+
+/* Remove margens, paddings e bordas padrões */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input,
+select,
+textarea,
+button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* font: inherit; */
+    vertical-align: baseline;
+    background: none;
+    color: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* Lista sem estilo */
+ol,
+ul {
+    list-style: none;
+}
+
+/* Links sem sublinhado */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Remove estilo de botão */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Remove estilo de input/textarea/select */
+input,
+textarea,
+select {
+    border-radius: 0;
+    outline: none;
+    border: none;
+}
+
+/* Remove resize em textarea */
+textarea {
+    resize: none;
+}
+
+/* Tabela sem espaçamento */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Remove aspas de blockquote e q */
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: '';
+}
+
+/* Remove marcação de foco azul em navegadores */
+:focus {
+    outline: none;
+}
+
+/* Define altura mínima */
+html,
+body {
+    height: 100%;
+}
+
+/* Define fonte básica e alisa o texto */
+body {
+    font-family: sans-serif;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove estilo de elementos marcados */
+::selection {
+    /* background: transparent; */
+    /* border: 1px solid var(--primary-color); */
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Placeholder com herança */
+::placeholder {
+    color: inherit;
+    opacity: 1;
+}
