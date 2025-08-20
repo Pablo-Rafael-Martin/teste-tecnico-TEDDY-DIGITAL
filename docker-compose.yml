@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  clientes-mfe:
+    build: ./clientes-mfe
+    container_name: clientes-mfe
+    ports:
+      - "5001:80"
+
+  shell-app:
+    build: ./shell-app
+    container_name: shell-app
+    ports:
+      - "5000:80"

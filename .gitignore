@@ -1,0 +1,24 @@
+# Arquivos de SO e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dependências
+**/node_modules
+
+# Saída de Build
+**/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Cache do Vite
+.vite
