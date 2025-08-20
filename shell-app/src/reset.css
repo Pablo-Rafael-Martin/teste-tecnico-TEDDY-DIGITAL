@@ -11,7 +11,6 @@ body {
     font-family: var(--font-work-sans), sans-serif;
 }
 
-
 /* Remove margens, paddings e bordas padrões */
 html,
 body,
@@ -178,7 +177,7 @@ blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-    content: '';
+    content: "";
 }
 
 /* Remove marcação de foco azul em navegadores */
@@ -204,8 +203,8 @@ body {
 ::selection {
     /* background: transparent; */
     /* border: 1px solid var(--primary-color); */
-    background-color: var(--primary-color);
-    color: white;
+    /* background-color: var(--primary-color);
+    color: white; */
 }
 
 /* Placeholder com herança */

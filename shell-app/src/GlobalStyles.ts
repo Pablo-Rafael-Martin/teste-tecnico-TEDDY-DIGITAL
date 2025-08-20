@@ -18,10 +18,23 @@ const GlobalStyles = createGlobalStyle`
         color: #000 !important;
     }
 
+    #root {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+    }
+
+    main {
+        /* max-width: 100vw; */
+        width: 100%;
+        padding: 2rem;
+    }
+
 
   body {
-    --primary-color: #003570;
-    --header-height: 12.8rem;
+    --grey-1: #AAAAAA;
+    --grey-2: #D9D9D9;
+    --orange-1: #EC6724;
     
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
