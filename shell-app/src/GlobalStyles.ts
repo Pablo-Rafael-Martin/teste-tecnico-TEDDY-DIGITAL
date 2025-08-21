@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    font-size: 10px;
+    font-size: 14px;
   }
 
   img {
