@@ -36,7 +36,7 @@ interface IHandleUpdateCustomer {
     id: number;
 }
 
-function ListagemDeClientes() {
+function ClientListPage() {
     function handleCreateCustomer(customerData: ICreateCustomer) {
         axios
             .post("https://boasorte.teddybackoffice.com.br/users", customerData)
@@ -204,7 +204,7 @@ function ListagemDeClientes() {
 
     return (
         <>
-            <Page id="Page">
+            <Page id="page-clients">
                 <PageContent>
                     <div className="page-list-first-row">
                         <h2 className="clientes-encontrados">
@@ -499,6 +499,18 @@ const List = styled("ul")`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     width: 100%;
+
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 const PageContent = styled("div")`
@@ -550,6 +562,21 @@ const PageContent = styled("div")`
         .clientes-encontrados {
             font-size: 1.8rem;
         }
+
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+            justify-content: initial;
+            align-items: flex-start;
+            gap: 2rem;
+
+            .clientes-por-pagina {
+                order: 1;
+            }
+
+            .clientes-encontrados {
+                order: 2;
+            }
+        }
     }
 `;
 
@@ -557,6 +584,7 @@ const Page = styled("div")`
     width: 100vw;
     min-height: 100vh;
     background-color: var(--grey-3);
+    padding: 2rem 2rem;
 `;
 
 const Pagination = styled("div")`
@@ -584,4 +612,4 @@ const Pagination = styled("div")`
     }
 `;
 
-export default ListagemDeClientes;
+export default ClientListPage;
