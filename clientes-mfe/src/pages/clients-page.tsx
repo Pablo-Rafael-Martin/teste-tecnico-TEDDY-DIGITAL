@@ -581,7 +581,7 @@ const PageContent = styled("div")`
 `;
 
 const Page = styled("div")`
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     background-color: var(--grey-3);
     padding: 2rem 2rem;
