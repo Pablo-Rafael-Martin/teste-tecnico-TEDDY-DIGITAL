@@ -14,7 +14,7 @@ export const List = styled("ul")`
         grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 580px) {
         grid-template-columns: 1fr;
     }
 `;
