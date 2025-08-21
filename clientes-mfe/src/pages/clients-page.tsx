@@ -107,7 +107,7 @@ function ClientListPage() {
     return (
         <>
             <Page id="page-clients">
-                <PageContent>
+                <PageContent className="page-content">
                     <div className="page-list-first-row">
                         <h2 className="clientes-encontrados">
                             <b>{clientsData?.clients.length}</b> clientes encontrados:

@@ -24,7 +24,8 @@ export const PageContent = styled("div")`
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    max-width: 144rem;
+    /* max-width: 144rem; */
+    max-width: 2016px;
     padding-top: 3rem;
     margin: 0 auto;
     width: 100%;
