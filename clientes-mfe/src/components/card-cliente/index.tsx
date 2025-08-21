@@ -42,19 +42,15 @@ function CardCliente({
 
                 <div className="row-edit">
                     <button onClick={() => toggleSelect(id)}>
-                        {isSelected === true ? (
-                            <img src={"../../../public/minus.svg"} />
-                        ) : (
-                            <img src={"../../../public/plus.svg"} />
-                        )}
+                        {isSelected === true ? <img src={"/images/minus.svg"} /> : <img src={"/images/plus.svg"} />}
                     </button>
 
                     <button onClick={onEditClick}>
-                        <img src={"../../../public/pencil.svg"} />
+                        <img src={"/images/pencil.svg"} />
                     </button>
 
                     <button onClick={onDeleteClick}>
-                        <img src={"../../../public/delete.svg"} />
+                        <img src={"/images/delete.svg"} />
                     </button>
                 </div>
             </div>

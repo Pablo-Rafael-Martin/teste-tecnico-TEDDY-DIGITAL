@@ -4,6 +4,14 @@ export const CardClientes = styled("div")`
     width: 100%;
     padding: 1.6rem;
     background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+
+    .row-edit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
     .content-wrapper {
         display: flex;
