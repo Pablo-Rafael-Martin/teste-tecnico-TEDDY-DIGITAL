@@ -10,7 +10,7 @@ const HomePage = () => {
 function App() {
     return (
         <BrowserRouter>
-            <div style={{ fontFamily: "sans-serif", padding: "2rem" }}>
+            <div style={{ fontFamily: "sans-serif" }}>
                 <Suspense fallback={<div>Carregando...</div>}>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
