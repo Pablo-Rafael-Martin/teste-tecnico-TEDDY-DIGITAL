@@ -34,6 +34,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     --grey-1: #AAAAAA;
     --grey-2: #D9D9D9;
+    --grey-3: #F5F5F5;
     --orange-1: #EC6724;
     
     -webkit-font-smoothing: antialiased;
