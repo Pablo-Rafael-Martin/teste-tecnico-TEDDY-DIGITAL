@@ -500,11 +500,11 @@ const List = styled("ul")`
     gap: 2rem;
     width: 100%;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1260px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 820px) {
         grid-template-columns: 1fr 1fr;
     }
 
@@ -563,7 +563,7 @@ const PageContent = styled("div")`
             font-size: 1.8rem;
         }
 
-        @media screen and (max-width: 500px) {
+        @media screen and (max-width: 700px) {
             flex-direction: column;
             justify-content: initial;
             align-items: flex-start;

@@ -10,6 +10,7 @@ export default defineConfig({
             filename: "remoteEntry.js",
             exposes: {
                 "./ClientListPage": "./src/pages/clients-page.tsx",
+                "./SelectedClientsPage": "./src/pages/selected-clients-page.tsx",
             },
             shared: ["react", "react-dom", "react-router-dom"],
         }),

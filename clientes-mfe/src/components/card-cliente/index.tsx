@@ -31,12 +31,12 @@ function CardCliente({
 
                     <div className="container-salario">
                         <span>Salário:</span>
-                        <span>{salary || "-"}</span>
+                        <span>{salary}</span>
                     </div>
 
                     <div className="container-company-valuation">
                         <span>Empresa:</span>
-                        <span>{companyValuation || "-"}</span>
+                        <span>{companyValuation}</span>
                     </div>
                 </div>
 
@@ -45,13 +45,17 @@ function CardCliente({
                         {isSelected === true ? <img src={"/images/minus.svg"} /> : <img src={"/images/plus.svg"} />}
                     </button>
 
-                    <button onClick={onEditClick}>
-                        <img src={"/images/pencil.svg"} />
-                    </button>
+                    {!isSelected && (
+                        <>
+                            <button onClick={onEditClick}>
+                                <img src={"/images/pencil.svg"} />
+                            </button>
 
-                    <button onClick={onDeleteClick}>
-                        <img src={"/images/delete.svg"} />
-                    </button>
+                            <button onClick={onDeleteClick}>
+                                <img src={"/images/delete.svg"} />
+                            </button>
+                        </>
+                    )}
                 </div>
             </div>
         </S.CardClientes>

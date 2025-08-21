@@ -7,6 +7,7 @@ export const Sidebar = styled("div")`
     transform: translateX(-100%);
     background-color: white;
     min-height: 100vh;
+    transition: transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     &.open {
         transform: translateX(0);

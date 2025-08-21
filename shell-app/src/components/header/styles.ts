@@ -42,6 +42,10 @@ export const Header = styled("header")`
             justify-content: center;
             gap: 3.3rem;
         }
+
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
     }
 
     .container-right {
@@ -55,6 +59,13 @@ export const Header = styled("header")`
         left: -5rem;
         width: 2.4rem;
         height: 2rem;
+
+        @media screen and (max-width: 1700px) {
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: unset;
+        }
     }
 
     .container-logo {

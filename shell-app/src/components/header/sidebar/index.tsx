@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { iconClientesSelecionados, iconClients, iconHome } from "../SVGs";
 import * as S from "./styles";
 
@@ -7,6 +8,8 @@ interface ISideBar {
 }
 
 function Sidebar({ className, currentPage }: ISideBar) {
+    const navigate = useNavigate();
+
     return (
         <S.Sidebar className={className}>
             <ul>
@@ -18,7 +21,10 @@ function Sidebar({ className, currentPage }: ISideBar) {
                     </button>
                 </li>
                 <li>
-                    <button className={`link-clientes ${currentPage === "/clientes" ? "active" : ""}`}>
+                    <button
+                        className={`link-clientes ${currentPage === "/clientes" ? "active" : ""}`}
+                        onClick={() => navigate("/clientes")}
+                    >
                         {/* <img src="/images/clientes.svg" alt="Clientes" /> */}
                         <div className="icon-clientes" dangerouslySetInnerHTML={{ __html: iconClients }} />
                         Clientes
@@ -29,6 +35,7 @@ function Sidebar({ className, currentPage }: ISideBar) {
                         className={`link-clientes-selecionados ${
                             currentPage === "/clientes-selecionados" ? "active" : ""
                         }`}
+                        onClick={() => navigate("/clientes-selecionados")}
                     >
                         {/* <img src="/images/clientes-selecionados.svg" alt="Clientes selecionados" /> */}
                         <div

@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Sidebar from "./sidebar";
 import * as S from "./styles";
 
 function Header() {
+    const navigate = useNavigate();
     const location = useLocation();
     const currentPath = location.pathname;
 
@@ -40,7 +41,10 @@ function Header() {
                 <nav>
                     <ul className="container-main-links">
                         <li>
-                            <button className={`link-clients ${currentPath === "/clientes" ? "active" : ""}`}>
+                            <button
+                                className={`link-clients ${currentPath === "/clientes" ? "active" : ""}`}
+                                onClick={() => navigate("/clientes")}
+                            >
                                 Clientes
                             </button>
                         </li>
@@ -49,12 +53,15 @@ function Header() {
                                 className={`link-selected-clients ${
                                     currentPath === "/clientes-selecionados" ? "active" : ""
                                 }`}
+                                onClick={() => navigate("/clientes-selecionados")}
                             >
                                 Clientes selecionados
                             </button>
                         </li>
                         <li>
-                            <button className="link-sair">Sair</button>
+                            <button onClick={() => navigate("/")} className="link-sair">
+                                Sair
+                            </button>
                         </li>
                     </ul>
                 </nav>
