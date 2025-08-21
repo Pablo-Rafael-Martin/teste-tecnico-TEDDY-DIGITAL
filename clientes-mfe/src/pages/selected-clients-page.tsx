@@ -19,12 +19,10 @@ function SelectedClientsPage() {
             .catch((err) => {
                 console.error(err);
             });
-    }, []); // Fetch only once on component mount
+    }, []);
 
     const toggleSelect = (id: number) => {
-        const newSelected = selectedIds.includes(id)
-            ? selectedIds.filter((x) => x !== id)
-            : [...selectedIds, id];
+        const newSelected = selectedIds.includes(id) ? selectedIds.filter((x) => x !== id) : [...selectedIds, id];
 
         setSelectedIds(newSelected);
         localStorage.setItem("selectedClients", JSON.stringify(newSelected));
@@ -35,7 +33,7 @@ function SelectedClientsPage() {
         localStorage.removeItem("selectedClients");
     };
 
-    const selectedClients = clientsData?.clients.filter(client => selectedIds.includes(client.id)) || [];
+    const selectedClients = clientsData?.clients.filter((client) => selectedIds.includes(client.id)) || [];
 
     return (
         <>
@@ -63,10 +61,7 @@ function SelectedClientsPage() {
                         ))}
                     </List>
 
-                    <button
-                        className="button-clear-customers"
-                        onClick={clearSelectedClients}
-                    >
+                    <button className="button-clear-customers" onClick={clearSelectedClients}>
                         Limpar clientes selecionados
                     </button>
                 </PageContent>
