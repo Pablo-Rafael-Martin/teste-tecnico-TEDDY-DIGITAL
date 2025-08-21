@@ -1,8 +1,7 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "./components/login";
-
-const ClientListPage = React.lazy(() => import("clientes_mfe/ClientListPage"));
+import ClientPageWrapper from "./components/ClientPageWrapper";
 
 const HomePage = () => {
     return <LoginPage />;
@@ -15,7 +14,7 @@ function App() {
                 <Suspense fallback={<div>Carregando...</div>}>
                     <Routes>
                         <Route path="/" element={<HomePage />} />
-                        <Route path="/clientes" element={<ClientListPage />} />
+                        <Route path="/clientes" element={<ClientPageWrapper />} />
                     </Routes>
                 </Suspense>
             </div>

@@ -6,7 +6,7 @@ function LoginPage() {
         <S.LoginPage className="wrapper-login">
             <main>
                 <section className="container-content">
-                    <h1>Olá, seja bem vindo!</h1>
+                    <h1 className="page-title">Olá, seja bem vindo!</h1>
 
                     <div className="container-form">
                         <LoginForm />
