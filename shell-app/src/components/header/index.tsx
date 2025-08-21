@@ -32,7 +32,7 @@ function Header() {
                     </div>
 
                     <div className="container-logo">
-                        <button className="website-logo">
+                        <button className="website-logo" onClick={() => navigate("/")}>
                             <img src="/images/website-logo.png" alt="Teddy Open Finance" />
                         </button>
                     </div>
