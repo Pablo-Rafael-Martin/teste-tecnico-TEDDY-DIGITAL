@@ -115,7 +115,6 @@ function ClientListPage() {
         return stored ? JSON.parse(stored) : [];
     });
 
-    // 2️⃣ Função para alternar seleção
     const toggleSelect = (id: number) => {
         setSelectedIds((prev) => {
             const newSelected = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
@@ -237,6 +236,7 @@ function ClientListPage() {
                                     companyValuation={item.companyValuation}
                                     name={item.name}
                                     salary={item.salary}
+                                    selectedClientsPage={false}
                                     onEditClick={() =>
                                         handleOpenModalEdit({
                                             name: item.name,

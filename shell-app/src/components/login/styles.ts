@@ -16,6 +16,10 @@ export const LoginPage = styled("div")`
         @media screen and (max-width: 550px) {
             font-size: 3rem;
         }
+
+        @media screen and (max-width: 500px) {
+            font-size: 2.6rem;
+        }
     }
 
     .container-content {

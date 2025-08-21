@@ -67,6 +67,7 @@ function SelectedClientsPage() {
                                         <CardCliente
                                             id={item.id}
                                             companyValuation={item.companyValuation}
+                                            selectedClientsPage={true}
                                             name={item.name}
                                             salary={item.salary}
                                             onEditClick={() => {}}

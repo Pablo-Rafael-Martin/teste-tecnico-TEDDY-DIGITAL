@@ -5,16 +5,20 @@ import * as S from "./styles";
 interface ISideBar {
     className?: string;
     currentPage?: string;
+    userName: string;
 }
 
-function Sidebar({ className, currentPage }: ISideBar) {
+function Sidebar({ className, currentPage, userName }: ISideBar) {
     const navigate = useNavigate();
 
     return (
         <S.Sidebar className={className}>
             <ul>
                 <li>
-                    <button className={`link-home ${currentPage === "/" ? "active" : ""}`}>
+                    <button
+                        className={`link-home ${currentPage === "/" ? "active" : ""}`}
+                        onClick={() => navigate("/", { state: { userName } })}
+                    >
                         {/* <img src="/images/home.svg" alt="Home" /> */}
                         <div className="icon-home" dangerouslySetInnerHTML={{ __html: iconHome }} />
                         Home
@@ -23,7 +27,7 @@ function Sidebar({ className, currentPage }: ISideBar) {
                 <li>
                     <button
                         className={`link-clientes ${currentPage === "/clientes" ? "active" : ""}`}
-                        onClick={() => navigate("/clientes")}
+                        onClick={() => navigate("/clientes", { state: { userName } })}
                     >
                         {/* <img src="/images/clientes.svg" alt="Clientes" /> */}
                         <div className="icon-clientes" dangerouslySetInnerHTML={{ __html: iconClients }} />
@@ -35,7 +39,7 @@ function Sidebar({ className, currentPage }: ISideBar) {
                         className={`link-clientes-selecionados ${
                             currentPage === "/clientes-selecionados" ? "active" : ""
                         }`}
-                        onClick={() => navigate("/clientes-selecionados")}
+                        onClick={() => navigate("/clientes-selecionados", { state: { userName } })}
                     >
                         {/* <img src="/images/clientes-selecionados.svg" alt="Clientes selecionados" /> */}
                         <div

@@ -6,6 +6,7 @@ interface ICardCliente {
     salary?: number;
     companyValuation?: number;
     selectedIds: number[];
+    selectedClientsPage: boolean;
     onEditClick: () => void;
     onDeleteClick: () => void;
     toggleSelect: (id: number) => void;
@@ -16,9 +17,10 @@ function CardCliente({
     name,
     salary,
     companyValuation,
+    selectedIds,
+    selectedClientsPage,
     onEditClick,
     onDeleteClick,
-    selectedIds,
     toggleSelect,
 }: ICardCliente) {
     const isSelected = selectedIds.includes(id);
@@ -45,7 +47,7 @@ function CardCliente({
                         {isSelected === true ? <img src={"/images/minus.svg"} /> : <img src={"/images/plus.svg"} />}
                     </button>
 
-                    {!isSelected && (
+                    {!selectedClientsPage && (
                         <>
                             <button onClick={onEditClick}>
                                 <img src={"/images/pencil.svg"} />

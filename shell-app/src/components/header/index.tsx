@@ -18,7 +18,7 @@ function Header() {
                 display: currentPath === "/" ? "none" : "flex",
             }}
         >
-            <Sidebar currentPage={currentPath} className={isSidebarOpen} />
+            <Sidebar userName={userName} currentPage={currentPath} className={isSidebarOpen} />
 
             <div className="wrapper-content">
                 <div className="container-left">
@@ -43,7 +43,7 @@ function Header() {
                         <li>
                             <button
                                 className={`link-clients ${currentPath === "/clientes" ? "active" : ""}`}
-                                onClick={() => navigate("/clientes")}
+                                onClick={() => navigate("/clientes", { state: { userName } })}
                             >
                                 Clientes
                             </button>
@@ -53,7 +53,7 @@ function Header() {
                                 className={`link-selected-clients ${
                                     currentPath === "/clientes-selecionados" ? "active" : ""
                                 }`}
-                                onClick={() => navigate("/clientes-selecionados")}
+                                onClick={() => navigate("/clientes-selecionados", { state: { userName } })}
                             >
                                 Clientes selecionados
                             </button>

@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
   /* Remove o estilo de autocomplete em navegadores WebKit (Chrome, Safari) */
   input:-webkit-autofill,
     textarea:-webkit-autofill {
@@ -39,8 +40,7 @@ const GlobalStyles = createGlobalStyle`
     
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    // Adicionar fontes como feito abaixo
-    /* font-family: var(--font-work-sans), sans-serif; */
+    font-family: 'Inter', sans-serif;
   }
 
   html {

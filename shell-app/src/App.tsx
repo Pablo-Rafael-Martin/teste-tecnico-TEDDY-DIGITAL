@@ -12,7 +12,7 @@ const HomePage = () => {
 function App() {
     return (
         <BrowserRouter>
-            <div style={{ fontFamily: "sans-serif" }}>
+            <div>
                 <Header />
 
                 <Suspense fallback={<div>Carregando...</div>}>
