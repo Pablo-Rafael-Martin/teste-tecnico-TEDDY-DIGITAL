@@ -47,7 +47,7 @@ function SelectedClientsPage() {
 
     useEffect(() => {
         fetchClients(1, 999);
-    }, []);
+    }, [selectedIds]);
 
     return (
         <>
@@ -79,7 +79,13 @@ function SelectedClientsPage() {
                         })}
                     </List>
 
-                    <button className="button-create-customer" onClick={() => {}}>
+                    <button
+                        className="button-clear-customers"
+                        onClick={() => {
+                            setSelectedIds([]);
+                            localStorage.removeItem("selectedClients");
+                        }}
+                    >
                         Limpar clientes selecionados
                     </button>
                 </PageContent>
@@ -117,7 +123,7 @@ const PageContent = styled("div")`
     margin: 0 auto;
     width: 100%;
 
-    .button-create-customer {
+    .button-clear-customers {
         width: 100%;
         border: 3px solid var(--orange-1);
         border-radius: 0.5rem;
