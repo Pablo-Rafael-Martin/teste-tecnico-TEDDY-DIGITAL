@@ -36,7 +36,7 @@ interface IHandleUpdateCustomer {
     id: number;
 }
 
-const ClientListPage = () => {
+function ListagemDeClientes() {
     function handleCreateCustomer(customerData: ICreateCustomer) {
         axios
             .post("https://boasorte.teddybackoffice.com.br/users", customerData)
@@ -108,6 +108,20 @@ const ClientListPage = () => {
         const id = Number(formData.get("id"));
 
         handleDeleteCustomer(id);
+    };
+
+    const [selectedIds, setSelectedIds] = useState<number[]>(() => {
+        const stored = localStorage.getItem("selectedClients");
+        return stored ? JSON.parse(stored) : [];
+    });
+
+    // 2️⃣ Função para alternar seleção
+    const toggleSelect = (id: number) => {
+        setSelectedIds((prev) => {
+            const newSelected = prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id];
+            localStorage.setItem("selectedClients", JSON.stringify(newSelected));
+            return newSelected;
+        });
     };
 
     const [isModalEditOpen, setIsModalEditOpen] = useState(false);
@@ -219,6 +233,7 @@ const ClientListPage = () => {
                         {clientsData?.clients.map((item) => (
                             <li key={item.id}>
                                 <CardCliente
+                                    id={item.id}
                                     companyValuation={item.companyValuation}
                                     name={item.name}
                                     salary={item.salary}
@@ -236,6 +251,8 @@ const ClientListPage = () => {
                                             id: item.id,
                                         })
                                     }
+                                    selectedIds={selectedIds}
+                                    toggleSelect={toggleSelect}
                                 />
                             </li>
                         ))}
@@ -342,7 +359,7 @@ const ClientListPage = () => {
             </Page>
         </>
     );
-};
+}
 
 const CreateCustomerModalContent = styled("div")`
     display: flex;
@@ -567,4 +584,4 @@ const Pagination = styled("div")`
     }
 `;
 
-export default ClientListPage;
+export default ListagemDeClientes;

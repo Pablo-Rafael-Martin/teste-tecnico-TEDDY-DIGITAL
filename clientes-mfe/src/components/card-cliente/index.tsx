@@ -1,14 +1,28 @@
 import * as S from "./styles";
 
 interface ICardCliente {
+    id: number;
     name?: string;
     salary?: number;
     companyValuation?: number;
+    selectedIds: number[];
     onEditClick: () => void;
     onDeleteClick: () => void;
+    toggleSelect: (id: number) => void;
 }
 
-function CardCliente({ name, salary, companyValuation, onEditClick, onDeleteClick }: ICardCliente) {
+function CardCliente({
+    id,
+    name,
+    salary,
+    companyValuation,
+    onEditClick,
+    onDeleteClick,
+    selectedIds,
+    toggleSelect,
+}: ICardCliente) {
+    const isSelected = selectedIds.includes(id);
+
     return (
         <S.CardClientes>
             <div className="content-wrapper">
@@ -27,9 +41,21 @@ function CardCliente({ name, salary, companyValuation, onEditClick, onDeleteClic
                 </div>
 
                 <div className="row-edit">
-                    <button onClick={onEditClick}>Editar</button>
-                    <button onClick={onDeleteClick}>Deletar</button>
-                    {/* Add delete button here later */}
+                    <button onClick={() => toggleSelect(id)}>
+                        {isSelected === true ? (
+                            <img src={"../../../public/minus.svg"} />
+                        ) : (
+                            <img src={"../../../public/plus.svg"} />
+                        )}
+                    </button>
+
+                    <button onClick={onEditClick}>
+                        <img src={"../../../public/pencil.svg"} />
+                    </button>
+
+                    <button onClick={onDeleteClick}>
+                        <img src={"../../../public/delete.svg"} />
+                    </button>
                 </div>
             </div>
         </S.CardClientes>
