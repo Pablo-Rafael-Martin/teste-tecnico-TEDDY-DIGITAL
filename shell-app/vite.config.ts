@@ -9,7 +9,7 @@ export default defineConfig(() => {
             federation({
                 name: "shell_app",
                 remotes: {
-                    clientes_mfe: "http://localhost:5001/assets/remoteEntry.js",
+                    clientes_mfe: `${process.env.VITE_CLIENTES_MFE_URL}/remoteEntry.js`,
                 },
                 shared: ["react", "react-dom", "react-router-dom"],
             }),
